@@ -5,6 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import junit.framework.Assert;
+import pageObjects.HomePage;
 import pageObjects.LandingPage;
 import pageObjects.LoginPage;
 import pageObjects.portalHomePage;
@@ -51,6 +52,13 @@ portalHomePage p=new portalHomePage(driver);
 			lp.getPassword().sendKeys(password);
 	        lp.getLogin().click();
 	    }
+	 @And("^User clicks on Projects link$")
+	    public void user_clicks_on_projects_link() throws Throwable {
+	        HomePage hp = new HomePage(driver);
+	        hp.NavBar().click();
+	        
+	    }
+
 	 @Then("^close browsers$")
 	    public void close_browsers() throws Throwable {
 	        driver.quit();
