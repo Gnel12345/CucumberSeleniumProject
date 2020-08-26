@@ -25,5 +25,21 @@ Examples:
 |username			    |password	    |
 |test99@gmail.com   	|123456 		|
 
+Scenario: Positive test validating grocery CheckOut
+Given Initialize the browser with chrome
+And Navigate to "https://rahulshettyacademy.com/seleniumPractise/#/" Site
+Given Adding Apples and Pumpkins
+Given Adding to Cart
+When User Clicks on Cart
+When Clicks Proceed to Checkout
+When Places Order
+When User Selects Country 
+When Agrees to Terms And Conditions
+When Clicks Proceed
+Then close browsers
+
+
+
+
 
 

@@ -1,13 +1,20 @@
 package stepDefinations;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import junit.framework.Assert;
+import pageObjects.CheckOutPage;
+import pageObjects.GreenCartHomePage;
 import pageObjects.HomePage;
 import pageObjects.LandingPage;
 import pageObjects.LoginPage;
+import pageObjects.OrderSummaryPage;
 import pageObjects.portalHomePage;
 import resources.base;
 
@@ -59,11 +66,69 @@ portalHomePage p=new portalHomePage(driver);
 	        
 	    }
 
+	 
+	 
+	 @Given("^Adding Apples and Pumpkins$")
+	 public void adding_Apples_and_Pumpkins() throws Throwable {
+		 GreenCartHomePage gchp = new GreenCartHomePage(driver);
+		 gchp.onAddApples().click();
+		 gchp.onAddPumpkins().click();
+	 }
+
+
+	 @Given("^Adding to Cart$")
+	 public void adding_to_Cart() throws Throwable {
+		 GreenCartHomePage gchp = new GreenCartHomePage(driver);
+		 gchp.onAddApplestoCart().click();
+		 gchp.onAddPumpkinstocart().click();
+	 }
+
+	 @When("^User Clicks on Cart$")
+	 public void user_Clicks_on_Cart() throws Throwable {
+		 GreenCartHomePage gchp = new GreenCartHomePage(driver);
+		 gchp.onCart().click();
+	 }
+
+	 @When("^Clicks Proceed to Checkout$")
+	 public void clicks_Proceed_to_Checkout() throws Throwable {
+		 GreenCartHomePage gchp = new GreenCartHomePage(driver);
+		 gchp.onProceedToCheckout().click();
+	 }
+
+	 @When("^Places Order$")
+	 public void places_Order() throws Throwable {
+	     OrderSummaryPage osp = new OrderSummaryPage(driver);
+	     osp.onOrderSummary().click();
+	 }
+
+	 @When("^User Selects Country$")
+	 public void user_Selects_Country() throws Throwable {
+		 //CheckOutPage co =  new CheckOutPage(driver);
+		// co.onSelectCountry().selectByIndex(2);
+	  Select drpdown=new Select(  driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/select")));
+	  drpdown.selectByIndex(3);
+	    
+	    
+	    
+	 }
+
+	 @When("^Agrees to Terms And Conditions$")
+	 public void agrees_to_Terms_And_Conditions() throws Throwable {
+		 CheckOutPage co = new CheckOutPage(driver);
+		 co.onAgree().click();
+	 }
+
+	 @When("^Clicks Proceed$")
+	 public void clicks_Proceed() throws Throwable {
+		 CheckOutPage co = new CheckOutPage(driver);
+		 co.onProceed();
+	 }
+
+	
+	
 	 @Then("^close browsers$")
 	    public void close_browsers() throws Throwable {
 	        driver.quit();
 	    }
-	
-
 
 }
