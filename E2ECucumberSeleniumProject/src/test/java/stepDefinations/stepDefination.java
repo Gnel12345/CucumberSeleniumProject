@@ -80,6 +80,7 @@ portalHomePage p=new portalHomePage(driver);
 	 public void adding_to_Cart() throws Throwable {
 		 GreenCartHomePage gchp = new GreenCartHomePage(driver);
 		 gchp.onAddApplestoCart().click();
+		 gchp.onAddApplestoCart().click();
 		 gchp.onAddPumpkinstocart().click();
 	 }
 
@@ -121,7 +122,8 @@ portalHomePage p=new portalHomePage(driver);
 	 @When("^Clicks Proceed$")
 	 public void clicks_Proceed() throws Throwable {
 		 CheckOutPage co = new CheckOutPage(driver);
-		 co.onProceed();
+		
+		 co.onProceed().click();
 	 }
 
 	

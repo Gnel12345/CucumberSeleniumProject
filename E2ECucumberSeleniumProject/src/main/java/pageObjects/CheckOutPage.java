@@ -23,7 +23,7 @@ public class CheckOutPage  {
 	
 	By agree = By.xpath("//*[@id=\"root\"]/div/div/div/div/input");
 	
-	By proceed = By.xpath("//*[@id=\"root\"]/div/div/div/div/button");
+	By proceed = By.tagName("button");
 	
 	
 	

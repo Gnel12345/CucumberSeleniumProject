@@ -10,7 +10,7 @@ Then close browsers
 
 Examples:
 |username			    |password	    |
-|test88@gmail.com    	|12345   		|
+|test123@gmail.com    	|123  		|
 
 
 Scenario Outline: Positive Navigation to Project
@@ -23,7 +23,7 @@ And User clicks on Projects link
 
 Examples:
 |username			    |password	    |
-|test99@gmail.com   	|123456 		|
+|test@gmail.com   	|1234		|
 
 Scenario: Positive test validating grocery CheckOut
 Given Initialize the browser with chrome
